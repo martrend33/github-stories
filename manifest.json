@@ -1,36 +1,32 @@
+
 {
-  "name": "GitHub Stories",
-  "version": "0.1",
-  "description": "Stories on GitHub",
-  "permissions": [
-    "activeTab",
-    "declarativeContent",
-    "storage"
-  ],
-  "background": {
-    "scripts": [
-      "background.js"
+
+  "name": "GitHub Chat",
+    "version": "0.2.0",
+    "description": "Open GitHub Chat from any GitHub page.",
+    "manifest_version": 3,
+    "permissions": [
+          "storage"
     ],
-    "persistent": false
-  },
-  "page_action": {},
-  "content_scripts": [
-    {
-      "matches": [
-        "https://github.com/",
-        "https://github.com/orgs/*"
-      ],
-      "js": [
-        "content-script.js"
-      ],
-      "css": [
-        "story-list.css",
-        "story-view.css"
-      ]
+    "host_permissions": [
+          "https://github.com/*"
+    ],
+    "content_scripts": [
+          {
+                  "matches": [
+                            "https://github.com/*"
+                  ],
+                  "js": [
+                            "content-script.js"
+                  ],
+                  "css": [
+                            "github-chat.css"
+                  ],
+                  "run_at": "document_idle"
+          }
+    ],
+    "options_ui": {
+          "page": "options.html",
+          "open_in_tab": false
     }
-  ],
-  "icons": {
-    "128": "github-stories.png"
-  },
-  "manifest_version": 2
 }
