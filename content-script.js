@@ -1,4 +1,4 @@
-onst DEFAULT_CHAT_URL = 'https://github-chat.com/';
+const DEFAULT_CHAT_URL = 'https://github-chat.com/';
 const STORAGE_KEY = 'githubChatUrl';
 const ROOT_ID = 'github-chat-extension-root';
 
